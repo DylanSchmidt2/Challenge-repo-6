@@ -1,0 +1,52 @@
+body {
+    line-height: 1;
+    font-size: 20px;
+    opacity: .9;
+    background-image: url("blue-sky-scaled.jpg");
+    font-family: 'Saira', sans-serif;
+    background-color: #87cefa;
+    opacity: .85;
+}
+#icon {
+    width: 75%;
+}
+.header {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#icon {
+    position: relative;
+    top: 50px;
+}
+h2 {
+    padding-left: 37px;
+    border-bottom: solid black 2px;
+    color: black;
+}
+#uvIndex {
+    color: #FF3300
+}
+.container {
+    background-color: #1e90ff;
+    border: 2px black double;
+    padding: 30px
+}
+h3 {
+    font-size: 28px;
+    border-bottom: solid black 2px;
+    color: black;
+}
+h4 {
+    font-size: 40px;
+}
+.btn {
+    background-color: white;
+    border: black solid 2px;
+}
+.btn-secondary {
+    color: black;
+}
+.btn-primary {
+    color: black;
+}
