@@ -29,8 +29,11 @@ Putting together this application has been by far, the most collaborative, ***fi
 
 ###### Biggest struggle
 I decided to use Ajax's 'get' feature instead of the ('fetch') command we have been learning in class. I was pretty lost in some documentation trying to piece it all together.
+
+
 Screenshot:
-![blue-sky-scaled](https://user-images.githubusercontent.com/109780961/195234604-c9d36cff-4097-4a89-9b02-dc483679fdf2.jpg)
+![Challenge 6 ss](https://user-images.githubusercontent.com/109780961/195235953-9d0ef683-49b6-45c0-b44a-78b49aa8ab0a.PNG)
+
 
 Link to site: https://dylanschmidt2.github.io/Challenge-repo-6/
 
