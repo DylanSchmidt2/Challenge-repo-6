@@ -29,7 +29,7 @@ Putting together this application has been by far, the most collaborative, ***fi
 ###### Biggest struggle
 I decided to use Ajax's 'get' feature instead of the ('fetch') command we have been learning in class. I was pretty lost in some documentation trying to piece it all together.
 Screenshot:
-![Challenge 5 ss](https://user-images.githubusercontent.com/109780961/193472101-4300c8be-292c-43bc-9955-3efbc70b35f5.PNG)
+![blue-sky-scaled](https://user-images.githubusercontent.com/109780961/195234604-c9d36cff-4097-4a89-9b02-dc483679fdf2.jpg)
 
 Link to site: https://dylanschmidt2.github.io/Challenge-repo-5/
 
