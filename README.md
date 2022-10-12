@@ -2,7 +2,7 @@
 
 This challenge was given by The University of Minnesota Bootcamp 
 
-These CSS, HTML, and JavaScript documents, utilize Ajax, jquery, local storage and a handful more things that make this weather app really fun and dynamic for the user
+These CSS, HTML, and JavaScript documents, utilize Ajax, Jquery, local storage and a handful more things that make this weather app really fun and dynamic for the user
 
 ### This project has the following features: 
 * _Search city_ button
@@ -15,6 +15,7 @@ The user will notice an assortment of icons throughout the application. These ic
     
 ### Bugs
 
+* Missing wind in 5 day forecast (at time of submission)---acceptance criteria
 * Does not adjust to queried city local time
 * Certain _common city_ names wont be directly accessible to the user, as they are spelled too similarly
 
