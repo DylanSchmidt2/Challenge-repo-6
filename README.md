@@ -25,7 +25,7 @@ The user will notice an assortment of icons throughout the application. These ic
 
 
 ### Final thoughts
-Putting together this application has been by far, the most collaborative, ***final product*** I've personally produced. I started off finding a github that was built similarly what I thought would work. Looked at lots and lots of the different ways people beat this one was great. I found a good block of code with the columbs set up and that moved me the right direction. I took in input and code from more than 10 different people on this project. Mostly talking through it with project members and my tutor. I do want to emphasize Ln. 90-120. This was a huge help displaying weather in columbs again for me.
+Putting together this application has been by far, the most collaborative, ***final product*** I've personally produced. I started off finding a github that was built similarly what I thought would work. Looked at lots and lots of the different ways people beat this one, it was great. I found a good block of code with the columns set up and that moved me the right direction. I took in input and code from more than 10 different people on this project. Mostly talking through it with project members and my tutor. I do want to emphasize Ln. 90-120. This was a huge help displaying weather in columbs again for me.
 
 ###### Biggest struggle
 I decided to use Ajax's 'get' feature instead of the ('fetch') command we have been learning in class. I was pretty lost in some documentation trying to piece it all together.
