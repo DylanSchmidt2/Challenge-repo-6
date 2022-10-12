@@ -7,28 +7,27 @@ These CSS, HTML, and JavaScript documents, utilize Ajax, jquery, local storage a
 ### This project has the following features: 
 * _Search city_ button
 * A _clear cities_button
-* _Color-coded_ timeblock hours
-* _Local Storage_
+* A _recent searches_ button
+*_Local Storage_
 
-### Color coding
-* Timeblock of _current_ hour, will be yellow
-* Timeblocks of _past_ hours, will be light blue
-* Timeblock of _future_ hours, will be dark blue
+### Icons
+The user will notice an assortment of icons throughout the application. These icons come directely from 'openweatherapi', they simply, represent an overall weather for that city. These icons change depending on rain, snow, wind, clouds, ect. and are displayed on each day in the 5 day forecast section
     
 ### Bugs
 
-N/A
+* Does not adjust to queried city local time
+* Certain _common city_ names wont be directly accessible to the user, as they are spelled too similarly
 
 ### Extra add-ons
 
 ###### I enjoy adding quality of life (qol) functions to assignments, time permitting. Unfortunately, I didn't have time to bring them to life on this assignment.
 
-* 
 
-* 
+### Final thoughts
+Putting together this application has been by far, the most collaborative, ***final product*** I've personally produced. I started off finding a github that was built similarly what I thought would work. Looked at lots and lots of the different ways people beat this one was great. I found a good block of code with the columbs set up and that moved me the right direction. I took in input and code from more than 10 different people on this project. Mostly talking through it with project members and my tutor. I do want to emphasize Ln. 90-120. This was a huge help displaying weather in columbs again for me.
 
-*P.S This project is extremely rebuildable and has been built many times, so, go check out my psuedocode!! I go into more depth with the innerworkings/how I constructed the app personally*
- 
+###### Biggest struggle
+I decided to use Ajax's 'get' feature instead of the ('fetch') command we have been learning in class. I was pretty lost in some documentation trying to piece it all together.
 Screenshot:
 ![Challenge 5 ss](https://user-images.githubusercontent.com/109780961/193472101-4300c8be-292c-43bc-9955-3efbc70b35f5.PNG)
 
