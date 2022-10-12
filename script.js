@@ -3,11 +3,11 @@ var listOfCities = []
 var APIKey = "7632f199d1648e1980201d52e92f308a";
 
 
-// Function to set cities from listOfCities array into local storage
+// Setting cities array to local storage
 function saveCities() {
 localStorage.setItem("cities", JSON.stringify(listOfCities));
 }
-// Function to render buttons based on what is in listOfCities array
+// loads buttons from list of cities array
 function renderButtons() {
 $(".buttons-view").empty();
 for (var i = 0; i < listOfCities.length; i++) {
@@ -18,9 +18,9 @@ a.text(listOfCities[i]);
 $(".buttons-view").prepend(a);
 }
 }
-// Function to display current weather (and UV index) based on either search or city button click
+// Function that displays weather
 function displayWeather() {
-//URL for ajax call (Note: same link, added endpoints)
+//URL for ajax call (Note: links will change, added endpoints)
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey + "&units=imperial";
 $.ajax({
 url: queryURL,
@@ -90,38 +90,38 @@ $.ajax({
 url: forecastURL,
 method: "GET"
 })
+ // columns for 5 day forecast
 .then(function (response) {
 var day1date = new Date(response.list[2].dt_txt)
 var day2date = new Date(response.list[10].dt_txt)
 var day3date = new Date(response.list[18].dt_txt)
 var day4date = new Date(response.list[26].dt_txt)
 var day5date = new Date(response.list[34].dt_txt)
-
+// temp column for 5 day forecast
 var day1temp = (response.list[2].main.temp * (9 / 5) - 459.67).toFixed(0)
 var day2temp = (response.list[10].main.temp * (9 / 5) - 459.67).toFixed(0)
 var day3temp = (response.list[18].main.temp * (9 / 5) - 459.67).toFixed(0)
 var day4temp = (response.list[26].main.temp * (9 / 5) - 459.67).toFixed(0)
 var day5temp = (response.list[34].main.temp * (9 / 5) - 459.67).toFixed(0)
-
+// humidity column for 5 day forecast
 var day1hum = (response.list[2].main.humidity).toFixed(0)
 var day2hum = (response.list[10].main.humidity).toFixed(0)
 var day3hum = (response.list[18].main.humidity).toFixed(0)
 var day4hum = (response.list[26].main.humidity).toFixed(0)
 var day5hum = (response.list[34].main.humidity).toFixed(0)
-
+// getting icons from openweathermap
 var day1icon = "http://openweathermap.org/img/w/" + response.list[2].weather[0].icon + ".png";
 var day2icon = "http://openweathermap.org/img/w/" + response.list[10].weather[0].icon + ".png";
 var day3icon = "http://openweathermap.org/img/w/" + response.list[18].weather[0].icon + ".png";
 var day4icon = "http://openweathermap.org/img/w/" + response.list[26].weather[0].icon + ".png";
 var day5icon = "http://openweathermap.org/img/w/" + response.list[34].weather[0].icon + ".png";
-
+// Formatting the columns for DAYS in 5 day forecast
 $('.day1-icon').attr('src', day1icon);
 $('.day2-icon').attr('src', day2icon);
 $('.day3-icon').attr('src', day3icon);
 $('.day4-icon').attr('src', day4icon);
 $('.day5-icon').attr('src', day5icon);
-
-
+// Formatting the columns for the data in 5 day forecast
 $(".day1").html("<br/>" + "<b>" + moment(day1date).format("ddd, MMM Do") + "</b>" + "</br>" + "Temp: " + day1temp + " F </br>" + "Humidity: " + day1hum + " %")
 $(".day2").html("<br/>" + "<b>" + moment(day2date).format("ddd, MMM Do") + "</b>" + "</br>" + "Temp: " + day2temp + " F </br>" + "Humidity: " + day2hum + " %")
 $(".day3").html("<br/>" + "<b>" + moment(day3date).format("ddd, MMM Do") + "</b>" + "</br>" + "Temp: " + day3temp + " F </br>" + "Humidity: " + day3hum + " %")
@@ -131,15 +131,13 @@ $(".day5").html("<br/>" + "<b>" + moment(day5date).format("ddd, MMM Do") + "</b>
 }
 console.log(searchData)
 
-
-
 //On click event listener for search button
 $("#run-search").on("click", function () {
 city = $("#search-term").val()
 displayWeather()
 display5day()
 })
-//CLear search button
+//Clear search button
 $("#clear-search").on("click", function (){
     localStorage.clear("cities")
     listOfCities = []
