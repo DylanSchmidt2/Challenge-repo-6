@@ -2,11 +2,11 @@
 
 This challenge was given by The University of Minnesota Bootcamp 
 
-These CSS, HTML, and JavaScript documents, use local storage, API calls, and user input to create an hourly planner.
+These CSS, HTML, and JavaScript documents, utilize Ajax, jquery, local storage and a handful more things that make this weather app really fun and dynamic for the user
 
 ### This project has the following features: 
-* Timeblocks
-* A _save button_ for each timeblock
+* _Search city_ button
+* A _clear cities_button
 * _Color-coded_ timeblock hours
 * _Local Storage_
 
