@@ -138,7 +138,15 @@ $(".day2").html("<br/>" + "<b>" + moment(day2date).format("ddd, MMM Do") + "</b>
 $(".day3").html("<br/>" + "<b>" + moment(day3date).format("ddd, MMM Do") + "</b>" + "</br>" + "Temp: " + day3temp + " F </br>" + "Humidity: " + day3hum + " %")
 $(".day4").html("<br/>" + "<b>" + moment(day4date).format("ddd, MMM Do") + "</b>" + "</br>" + "Temp: " + day4temp + " F </br>" + "Humidity: " + day4hum + " %")
 $(".day5").html("<br/>" + "<b>" + moment(day5date).format("ddd, MMM Do") + "</b>" + "</br>" + "Temp: " + day5temp + " F </br>" + "Humidity: " + day5hum + " %")
-}})
+})}
+
+
+
+
+
+
+
+
 console.log(searchData)
 
 //On click event listener for search button
@@ -171,3 +179,10 @@ listOfCities = listOfCities.concat(pushCities)
 //render buttons
   renderButtons()
 })
+if(localStorage.getItem("cities") !== null) {
+var savedCity = localStorage.getItem("cities");
+var pushCities = JSON.parse(savedCity)
+listOfCities = listOfCities.concat(pushCities)
+}
+//render buttons
+renderButtons()
