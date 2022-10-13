@@ -7,14 +7,14 @@ var APIKey = "7632f199d1648e1980201d52e92f308a";
 function saveCities() {
 localStorage.setItem("cities", JSON.stringify(listOfCities));
 }
-// Defining our function to grab from the 'listOfCities' array
+// Defining our function to grab from the 'listOfCities' array and render a button for it
 function renderButtons() {
 $(".buttons-view").empty();
-for (var i = 0; i < listOfCities.length; i++) {
-var a = $("<button>");
-a.addClass("btn btn-defult city-btn");
-a.attr("data-name", listOfCities[i]);
-a.text(listOfCities[i]);
+  for (var i = 0; i < listOfCities.length; i++) {
+  var a = $("<button>");
+   a.addClass("btn btn-defult city-btn");
+    a.attr("data-name", listOfCities[i]);
+     a.text(listOfCities[i]);
  // Note: ".PREPEND"
 $(".buttons-view").prepend(a);
 }
@@ -22,7 +22,7 @@ $(".buttons-view").prepend(a);
 // Function that displays weather
 function displayWeather() {
 //URL for ajax call (Note: links will change, added endpoints)
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey + "&units=imperial";
+ var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey + "&units=imperial";
 $.ajax({
   url: queryURL,
  // Defining the method we want to use (ex. get/post)
@@ -30,48 +30,52 @@ $.ajax({
 }).then(function (response) {
 $(".search-data").html("")
 //Setting new div to hold 'Current Weather' (Note: using "PREPEND" not "append")
-var newDiv = $("<div class='cityWeather'>")
+ var newDiv = $("<div class='cityWeather'>")
 newDiv.html("<h2>Current Weather</h2><br>")
  // Note: ".PREPEND"
 searchData.prepend(newDiv)
 //Appending city name to new div
   var cityName = response.name
-  var first = $("<p>").html("<h4>" + cityName + "</h4>");
+   var first = $("<p>").html("<h4>" + cityName + "</h4>");
 newDiv.append(first)
 //Appending 'currentDate'
   var currentDate = moment().format("LLLL")
-  var pastDate = $("<p>").html("<i>" + currentDate + "</i>");
+   var pastDate = $("<p>").html("<i>" + currentDate + "</i>");
 newDiv.append(pastDate)
 //Appending 'windSpeed' (Note: rounded to nearest whole number)
   var windSpeed = response.wind.speed
-  var second = $("<p>").text("Wind Speed: " + windSpeed.toFixed(0) + " mph");
+   var second = $("<p>").text("Wind Speed: " + windSpeed.toFixed(0) + " mph");
 newDiv.append(second)
 //Appending 'humidity' (Note: rounded to nearest whole number)
   var humidity = response.main.humidity
-  var third = $("<p>").text("Humidity: " + humidity.toFixed(0) + " %");
+   var third = $("<p>").text("Humidity: " + humidity.toFixed(0) + " %");
 newDiv.append(third)
 //Call for temperature (fixed to whole number)
   var temperature = response.main.temp
-  var pFour = $("<p>").text("Temperature: " + temperature.toFixed(0) + " F");
+   var pFour = $("<p>").text("Temperature: " + temperature.toFixed(0) + " F");
 newDiv.append(pFour)
 //Creation of image tag and call for icon image from API
  var iconImg = $("<img id = 'icon'>")
 $(".weather-icon").append(iconImg)
   var icon = response.weather[0].icon;
-  var iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
+   var iconurl = "http://openweathermap.org/img/w/" + icon + ".png";
 $('#icon').attr('src', iconurl);
 //Call for longitude and latitude (for UV Index AJAX Call)
   var lon = response.coord.lon
-  var lat = response.coord.lat
+   var lat = response.coord.lat
 //URL for UV Index API
-  var uvIndexUrl = "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + lat + "&lon=" + lon
+  var uvIndexUrl = "http://api.openweathermap.org/data/2.5/uvi?appid=" 
+   + APIKey 
+    + "&lat=" + lat 
+     + "&lon=" + lon
 //AJAX call for UV Index
 $.ajax({
   url: uvIndexUrl,
-  method: "GET"
+   method: "GET"
 }).then(function (response) {
   var uvIndex = response.value
-  var pFive = $("<p id=uvIndex>").text("UV Index: " + uvIndex);
+   var pFive = $("<p id=uvIndex>").text("UV Index: "
+    + uvIndex);
 newDiv.append(pFive)
 })
 //Push search term into array ONLY if the name doesn't already exist
@@ -91,7 +95,7 @@ function display5day() {
 $(".fiveDayHeader").html("<h3>5 Day Forecast</h3>")
 $.ajax({
   url: forecastURL,
-  method: "GET"
+   method: "GET"
 })
  
  
@@ -134,20 +138,19 @@ $(".day2").html("<br/>" + "<b>" + moment(day2date).format("ddd, MMM Do") + "</b>
 $(".day3").html("<br/>" + "<b>" + moment(day3date).format("ddd, MMM Do") + "</b>" + "</br>" + "Temp: " + day3temp + " F </br>" + "Humidity: " + day3hum + " %")
 $(".day4").html("<br/>" + "<b>" + moment(day4date).format("ddd, MMM Do") + "</b>" + "</br>" + "Temp: " + day4temp + " F </br>" + "Humidity: " + day4hum + " %")
 $(".day5").html("<br/>" + "<b>" + moment(day5date).format("ddd, MMM Do") + "</b>" + "</br>" + "Temp: " + day5temp + " F </br>" + "Humidity: " + day5hum + " %")
-})
-}
+}})
 console.log(searchData)
 
 //On click event listener for search button
 $("#run-search").on("click", function () {
   city = $("#search-term").val()
-  displayWeather()
-  display5day()
+   displayWeather()
+    display5day()
 })
 //Clear search button
 $("#clear-search").on("click", function (){
     localStorage.clear("cities")
-    listOfCities = []
+     listOfCities = []
     $(".buttons-view").empty()
     //refresh page
     location.reload()
@@ -155,8 +158,8 @@ $("#clear-search").on("click", function (){
 //Recent search button (Calls the 2 functions we need for data)
 $(document).on("click", ".city-btn", function () {
   city = $(this).attr("data-name");
-  display5day()
-  displayWeather()
+   display5day()
+    displayWeather()
 })
 //To run when document loads (if/else statement that will pull from local storage only if the value is not "null")
 $(document).ready(function() {
@@ -166,5 +169,5 @@ if(localStorage.getItem("cities") !== null) {
 listOfCities = listOfCities.concat(pushCities)
 }
 //render buttons
-renderButtons()
+  renderButtons()
 })
