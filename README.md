@@ -5,7 +5,7 @@ This challenge was given by The University of Minnesota Bootcamp
 These CSS, HTML, and JavaScript documents, utilize Ajax, Jquery, local storage and a handful more things that make this weather app really fun and dynamic for the user
 
 ### This project has the following features: 
-* _Search city_ button
+* A _Search city_ button
 * A _clear cities_ button
 * A _recent searches_ button
 * _Local Storage_
