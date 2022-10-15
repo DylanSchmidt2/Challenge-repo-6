@@ -8,6 +8,7 @@ These CSS, HTML, and JavaScript documents, utilize Ajax, Jquery, local storage a
 * A _Search city_ button
 * A _clear cities_ button
 * A _recent searches_ button
+* A _5 day forecast_ column
 * _Local Storage_
 
 ### Icons
