@@ -6,9 +6,9 @@ These CSS, HTML, and JavaScript documents, utilize Ajax, Jquery, local storage a
 
 ### This project has the following features: 
 * _Search city_ button
-* A _clear cities_button
+* A _clear cities_ button
 * A _recent searches_ button
-*_Local Storage_
+* _Local Storage_
 
 ### Icons
 The user will notice an assortment of icons throughout the application. These icons come directely from 'openweatherapi', they simply, represent an overall weather for that city. These icons change depending on rain, snow, wind, clouds, ect. and are displayed on each day in the 5 day forecast section
